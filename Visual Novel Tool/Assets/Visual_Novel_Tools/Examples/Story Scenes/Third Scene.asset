@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 046b970c0cd6dba459ff447f549e6f0a, type: 3}
-  m_Name: Second Scene
+  m_Name: Third Scene
   m_EditorClassIdentifier: 
   sentences:
-  - text: Epa
+  - text: "O parque \xE9 melhor"
     speaker: {fileID: 11400000, guid: ba2d8b927ba4849489fae99fdab27fe9, type: 2}
-  - text: a quanto tempo seu arrombado filho de uma rapariga promiscua prostituta
+  - text: "Voce tem raz\xE3o"
     speaker: {fileID: 11400000, guid: 977a7e074224bb041ae6bb3322a4c5c6, type: 2}
-  background: {fileID: 21300000, guid: ef1452c03e66b0e49b0530b8e973d942, type: 3}
-  nextScene: {fileID: 11400000, guid: 191c67cb5525cb0499dbf7e14e571e63, type: 2}
+  background: {fileID: 21300000, guid: 0bc27ad7180fe0947ae9af7150239194, type: 3}
+  nextScene: {fileID: 0}
