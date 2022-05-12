@@ -8,6 +8,7 @@ public class StoryScene : ScriptableObject
     public List<Sentence> sentences;
     public Sprite background;
     public StoryScene nextScene;
+    public StoryScene prevScene;
     public AudioClip music;
 
     [System.Serializable]

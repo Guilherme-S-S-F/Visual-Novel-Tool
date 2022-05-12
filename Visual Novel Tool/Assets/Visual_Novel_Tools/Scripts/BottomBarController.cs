@@ -35,11 +35,25 @@ public class BottomBarController : MonoBehaviour
             audioSystem.PlayMusic(currentScene.music);
         }
     }
+    public void PlayLastScene(StoryScene scene)
+    {
+        currentScene = scene;
+        sentence_index = scene.sentences.Count;
+    }
     public void PlayNextSentence()
     {
         StartCoroutine(TypingText(currentScene.sentences[++sentence_index].text));
         nameText.text = currentScene.sentences[sentence_index].speaker.name;
         nameText.color = currentScene.sentences[sentence_index].speaker.textColor;
+    }
+    public void PlayPreviousSentence()
+    {
+        if(sentence_index -1 != -1)
+        {
+            StartCoroutine(TypingText(currentScene.sentences[--sentence_index].text));
+            nameText.text = currentScene.sentences[sentence_index].speaker.name;
+            nameText.color = currentScene.sentences[sentence_index].speaker.textColor;
+        }
     }
     public bool IsCompleted()
     {
@@ -48,6 +62,10 @@ public class BottomBarController : MonoBehaviour
     public bool IsLastSentence()
     {
         return sentence_index + 1 == currentScene.sentences.Count;
+    }
+    public bool IsFirstSentence()
+    {
+        return sentence_index == 0;
     }
     private IEnumerator TypingText(string text)
     {

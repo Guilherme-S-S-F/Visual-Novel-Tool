@@ -12,21 +12,49 @@ public class GameController : MonoBehaviour
     {
         bottomBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
+        NextSentece();
+
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            if (bottomBar.IsCompleted())
+            NextSentece();
+        }
+        else if (Input.mouseScrollDelta.y < 0)
+        {
+            PreviousSentence();
+        }
+    }
+    
+    private void NextSentece()
+    {
+        if (bottomBar.IsCompleted())
+        {
+            if (bottomBar.IsLastSentence())
             {
-                if (bottomBar.IsLastSentence())
+                currentScene = currentScene.nextScene;
+                bottomBar.PlayScene(currentScene);
+                backgroundController.SwitchImage(currentScene.background);
+            }
+            bottomBar.PlayNextSentence();
+        }
+    }
+    private void PreviousSentence()
+    {
+        if (bottomBar.IsCompleted())
+        {
+            if (bottomBar.IsFirstSentence())
+            {
+
+                if (currentScene.prevScene != null)
                 {
-                    currentScene = currentScene.nextScene;
-                    bottomBar.PlayScene(currentScene);
+                    currentScene = currentScene.prevScene;
+                    bottomBar.PlayLastScene(currentScene);
                     backgroundController.SwitchImage(currentScene.background);
                 }
-                bottomBar.PlayNextSentence();
             }
+            bottomBar.PlayPreviousSentence();
         }
     }
 }
