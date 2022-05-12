@@ -8,6 +8,8 @@ public class BottomBarController : MonoBehaviour
     public TextMeshProUGUI barText;
     public TextMeshProUGUI nameText;
 
+    public AudioSystem audioSystem;
+
     private int sentence_index = -1;
     private StoryScene currentScene;
     private State state = State.Completed;
@@ -26,8 +28,12 @@ public class BottomBarController : MonoBehaviour
     }
     public void PlayScene(StoryScene scene)
     {
-        currentScene = scene;
-        sentence_index = -1;        
+        currentScene = scene;        
+        sentence_index = -1;
+        if (currentScene.music != null)
+        {
+            audioSystem.PlayMusic(currentScene.music);
+        }
     }
     public void PlayNextSentence()
     {

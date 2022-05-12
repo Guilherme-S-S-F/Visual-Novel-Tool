@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Second Scene
   m_EditorClassIdentifier: 
   sentences:
-  - text: Epa
-    speaker: {fileID: 11400000, guid: ba2d8b927ba4849489fae99fdab27fe9, type: 2}
-  - text: a quanto tempo seu arrombado filho de uma rapariga promiscua prostituta
-    speaker: {fileID: 11400000, guid: 977a7e074224bb041ae6bb3322a4c5c6, type: 2}
+  - text: Eae jeep
+    speaker: {fileID: 11400000, guid: 3ae0bbe3d68fde344a15ebe5129d7622, type: 2}
+    sound: {fileID: 0}
+  - text: "C\xF3e radrf"
+    speaker: {fileID: 11400000, guid: e24443d85aef9214baef7d51ee724883, type: 2}
+    sound: {fileID: 0}
+  - text: salve para os dois
+    speaker: {fileID: 11400000, guid: 2e83e6be53f079347b4234a706f873df, type: 2}
+    sound: {fileID: 0}
   background: {fileID: 21300000, guid: ef1452c03e66b0e49b0530b8e973d942, type: 3}
-  nextScene: {fileID: 11400000, guid: 191c67cb5525cb0499dbf7e14e571e63, type: 2}
+  nextScene: {fileID: 0}
+  music: {fileID: 8300000, guid: fa6dfc993e31bfb4aabbe8329bd88f0d, type: 3}

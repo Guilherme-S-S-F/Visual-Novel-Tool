@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 046b970c0cd6dba459ff447f549e6f0a, type: 3}
-  m_Name: First Scene
+  m_Name: First scene
   m_EditorClassIdentifier: 
   sentences:
-  - text: Bababoi
-    speaker: {fileID: 11400000, guid: ba2d8b927ba4849489fae99fdab27fe9, type: 2}
-  - text: ee-ehh???
-    speaker: {fileID: 11400000, guid: 977a7e074224bb041ae6bb3322a4c5c6, type: 2}
-  - text: Salve?
-    speaker: {fileID: 11400000, guid: 977a7e074224bb041ae6bb3322a4c5c6, type: 2}
+  - text: Salve low
+    speaker: {fileID: 11400000, guid: 2c762f6e000fffd4bb17a0eeffdd6f06, type: 2}
+    sound: {fileID: 0}
+  - text: Salve Pudim
+    speaker: {fileID: 11400000, guid: 2e83e6be53f079347b4234a706f873df, type: 2}
+    sound: {fileID: 0}
   background: {fileID: 21300000, guid: 0bc27ad7180fe0947ae9af7150239194, type: 3}
   nextScene: {fileID: 11400000, guid: b8a68af00282c1a46b2864a79de907ff, type: 2}
+  music: {fileID: 8300000, guid: 669ee9cbda7f087468c0881890fcd2e3, type: 3}
