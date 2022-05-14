@@ -20,10 +20,15 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             NextSentece();
+            bottomBar.max_sentence_viewed++;
         }
         else if (Input.mouseScrollDelta.y < 0)
         {
-            PreviousSentence();
+            PreviousSentence();            
+        }
+        else if (Input.mouseScrollDelta.y > 0 && bottomBar.sentence_counter <= bottomBar.max_sentence_viewed)
+        {
+            NextSentece();            
         }
     }
     
@@ -54,7 +59,7 @@ public class GameController : MonoBehaviour
                     backgroundController.SwitchImage(currentScene.background);
                 }
             }
-            bottomBar.PlayPreviousSentence();
+            bottomBar.PlayPreviousSentence();            
         }
     }
 }

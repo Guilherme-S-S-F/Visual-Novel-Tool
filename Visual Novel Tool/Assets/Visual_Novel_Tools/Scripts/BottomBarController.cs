@@ -10,6 +10,9 @@ public class BottomBarController : MonoBehaviour
 
     public AudioSystem audioSystem;
 
+    public int max_sentence_viewed = 0;
+    public int sentence_counter = 0;
+
     private int sentence_index = -1;
     private StoryScene currentScene;
     private State state = State.Completed;
@@ -45,6 +48,7 @@ public class BottomBarController : MonoBehaviour
         StartCoroutine(TypingText(currentScene.sentences[++sentence_index].text));
         nameText.text = currentScene.sentences[sentence_index].speaker.name;
         nameText.color = currentScene.sentences[sentence_index].speaker.textColor;
+        sentence_counter++;
     }
     public void PlayPreviousSentence()
     {
@@ -53,6 +57,7 @@ public class BottomBarController : MonoBehaviour
             StartCoroutine(TypingText(currentScene.sentences[--sentence_index].text));
             nameText.text = currentScene.sentences[sentence_index].speaker.name;
             nameText.color = currentScene.sentences[sentence_index].speaker.textColor;
+            sentence_counter--;
         }
     }
     public bool IsCompleted()
