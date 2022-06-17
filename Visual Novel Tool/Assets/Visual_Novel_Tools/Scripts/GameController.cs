@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public bool mouseAboveText;
+
+    public bool choiceFlag = false;
+    public bool pause = false;
+    public GameObject choiceMenu;
     public StoryScene currentScene;
-    public BottomBarController bottomBar;
+    public BottomBarController bottomBar;    
     public BackgroundController backgroundController;
 
     private void Start()
@@ -17,22 +23,30 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (!choiceFlag)
         {
-            NextSentece();
-            bottomBar.max_sentence_viewed++;
+            choiceMenu.SetActive(false);
         }
-        else if (Input.mouseScrollDelta.y < 0)
+        
+        if (!pause)
         {
-            PreviousSentence();            
-        }
-        else if (Input.mouseScrollDelta.y > 0 && bottomBar.sentence_counter <= bottomBar.max_sentence_viewed)
-        {
-            NextSentece();            
+            if (Input.GetKeyDown(KeyCode.Space) || ClickOnTextMenu())
+            {
+                NextSentece();
+                bottomBar.max_sentence_viewed++;
+            }
+            else if (Input.mouseScrollDelta.y < 0)
+            {
+                PreviousSentence();
+            }
+            else if (Input.mouseScrollDelta.y > 0 && bottomBar.sentence_counter <= bottomBar.max_sentence_viewed)
+            {
+                NextSentece();
+            }
         }
     }
     
-    private void NextSentece()
+    public void NextSentece()
     {
         if (bottomBar.IsCompleted())
         {
@@ -61,5 +75,23 @@ public class GameController : MonoBehaviour
             }
             bottomBar.PlayPreviousSentence();            
         }
+    }
+    public void MouseEnter()
+    {
+        mouseAboveText = true;
+    }
+    public void MouseExit()
+    {
+        mouseAboveText = false;
+    }
+
+    private bool ClickOnTextMenu()
+    {
+        bool boolean = false;
+        if (Input.GetMouseButtonDown(0) && mouseAboveText)
+        {
+            boolean = true;
+        }
+        return boolean;
     }
 }

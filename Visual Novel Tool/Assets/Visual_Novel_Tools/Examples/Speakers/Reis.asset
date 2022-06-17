@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 719edf3dc05600e488485d9056ac12ba, type: 3}
-  m_Name: lowgroundboi
+  m_Name: Reis
   m_EditorClassIdentifier: 
-  speakerName: lowgroundboi
-  textColor: {r: 1, g: 0.8135681, b: 0, a: 1}
+  speakerName: Reis-chan
+  textColor: {r: 1, g: 0, b: 0, a: 1}

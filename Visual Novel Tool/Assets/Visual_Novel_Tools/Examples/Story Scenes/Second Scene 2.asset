@@ -10,26 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 046b970c0cd6dba459ff447f549e6f0a, type: 3}
-  m_Name: First scene
+  m_Name: Second Scene 2
   m_EditorClassIdentifier: 
   sentences:
-  - text: Salve jeep
+  - text: Que bom que veio comigo
     choices: []
-    speaker: {fileID: 11400000, guid: 2c762f6e000fffd4bb17a0eeffdd6f06, type: 2}
+    speaker: {fileID: 11400000, guid: 3ae0bbe3d68fde344a15ebe5129d7622, type: 2}
     sound: {fileID: 0}
-  - text: Com quem vc quer ir?
-    choices:
-    - choice_text: Ir Com o Radrf
-      public_id: 0
-      local_id: 0
-      ChapterName: Chapter 1-2.2
-    - choice_text: Ir com o jeep
-      public_id: 1
-      local_id: 1
-      ChapterName: Chapter 1-2.1
+  - text: ' Que droga'
+    choices: []
     speaker: {fileID: 11400000, guid: e24443d85aef9214baef7d51ee724883, type: 2}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 0bc27ad7180fe0947ae9af7150239194, type: 3}
-  nextScene: {fileID: 11400000, guid: b8a68af00282c1a46b2864a79de907ff, type: 2}
-  prevScene: {fileID: 0}
+  nextScene: {fileID: 0}
+  prevScene: {fileID: 11400000, guid: b8a68af00282c1a46b2864a79de907ff, type: 2}
   music: {fileID: 8300000, guid: 669ee9cbda7f087468c0881890fcd2e3, type: 3}

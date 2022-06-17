@@ -23,6 +23,6 @@ public class AudioSystem : MonoBehaviour
     private void Start()
     {
         musicSource.loop = true;
-        soundSource.loop = true;
+        soundSource.loop = false;
     }
 }
