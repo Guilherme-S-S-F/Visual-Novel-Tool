@@ -60,16 +60,14 @@ public class BottomBarController : MonoBehaviour
         }
         //If the sentence had choices, will show the choice menu with the choices. If not will disable the choice menu.
         if (currentScene.sentences[sentence_index].choices != null && currentScene.sentences[sentence_index].choices.Count != 0)
-        {
-            choiceMenuController.DeleteChoices();
-            choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices);
-            Debug.Log("bbb");
+        {            
+            choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices);            
         }
         
     }
     public void PlayPreviousSentence()
-    {
-        if(sentence_index -1 != -1)
+    {        
+        if (sentence_index -1 != -1)
         {
             StartCoroutine(TypingText(currentScene.sentences[--sentence_index].text));
             nameText.text = currentScene.sentences[sentence_index].speaker.name;

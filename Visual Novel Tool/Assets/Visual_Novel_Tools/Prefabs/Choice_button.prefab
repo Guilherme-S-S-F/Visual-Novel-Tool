@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 155439858426329163}
   m_Layer: 5
   m_Name: Choice_button
-  m_TagString: Choice Button
+  m_TagString: ChoiceButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

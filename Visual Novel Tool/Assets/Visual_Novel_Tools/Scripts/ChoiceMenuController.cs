@@ -28,8 +28,7 @@ public class ChoiceMenuController : MonoBehaviour
             {
                 scene = story.scene;
             }
-        }
-        //Abaixo Alterar a próxima cena do jogo pela scene escolhida pelas escolhas
+        }        
         if (scene != null)
         {
             gameController.currentScene.nextScene = scene;            
@@ -41,10 +40,13 @@ public class ChoiceMenuController : MonoBehaviour
         
         gameController.NextSentece();
         gameController.choiceFlag = false;
+        DeleteChoices();
         choice_menu.SetActive(false);
+        
     }
     public void NextChoices(List<Choice> choices)
     {
+        
         if(choices == null)
             return;
 
@@ -64,19 +66,14 @@ public class ChoiceMenuController : MonoBehaviour
 
         }
         gameController.choiceFlag = true;
-    }
-    public void DisableChoices()
-    {
-        gameController.choiceFlag = false;
-        choice_menu.SetActive(false);
-    }
+    }    
     public void DeleteChoices()
     {
-        GameObject[] buttons = GameObject.FindGameObjectsWithTag("Choice Button");
+        GameObject[] buttons = GameObject.FindGameObjectsWithTag("ChoiceButton");
 
         foreach(GameObject button in buttons)
         {
-            Destroy(button);
+            GameObject.Destroy(button,1);
         }
     }
 }

@@ -17,8 +17,16 @@ MonoBehaviour:
     choices: []
     speaker: {fileID: 11400000, guid: 3ae0bbe3d68fde344a15ebe5129d7622, type: 2}
     sound: {fileID: 0}
-  - text: ' Que droga'
-    choices: []
+  - text: sorvete ou sorvete?
+    choices:
+    - choice_text: Sorvete
+      public_id: 0
+      local_id: 0
+      ChapterName: sorvete
+    - choice_text: Sorvete
+      public_id: 1
+      local_id: 1
+      ChapterName: sorvete
     speaker: {fileID: 11400000, guid: e24443d85aef9214baef7d51ee724883, type: 2}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 0bc27ad7180fe0947ae9af7150239194, type: 3}

@@ -23,11 +23,6 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if (!choiceFlag)
-        {
-            choiceMenu.SetActive(false);
-        }
-        
         if (!pause)
         {
             if (Input.GetKeyDown(KeyCode.Space) || ClickOnTextMenu())

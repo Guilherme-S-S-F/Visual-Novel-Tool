@@ -1173,6 +1173,8 @@ MonoBehaviour:
     scene: {fileID: 11400000, guid: b8a68af00282c1a46b2864a79de907ff, type: 2}
   - title: Chapter 1-2.2
     scene: {fileID: 11400000, guid: eb79284ff7701fd4893345602d704b84, type: 2}
+  - title: sorvete
+    scene: {fileID: 11400000, guid: 66fb5ffb67e43954d820503c1e10543c, type: 2}
 --- !u!1 &973550769
 GameObject:
   m_ObjectHideFlags: 0
