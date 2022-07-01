@@ -10,13 +10,16 @@ public class ChoiceMenuController : MonoBehaviour
     [SerializeField] GameController gameController;
     [Header("Story")]
     [SerializeField] GameObject choice_menu;
+    [SerializeField] GameObject question_holder;
     [SerializeField] GameObject button_prefab;
     [SerializeField] StorySceneInfo[] stories;
+    private TextMeshProUGUI question_Text;
     
 
     private void Start()
-    {       
-        choice_menu.SetActive(false);
+    {
+        question_Text = question_holder.GetComponentInChildren<TextMeshProUGUI>();
+        HideHolders();
     }
     [SerializeField]
     public void SelectedChoice(string name)
@@ -41,9 +44,10 @@ public class ChoiceMenuController : MonoBehaviour
         gameController.NextSentece();
         gameController.choiceFlag = false;
         DeleteChoices();
-        choice_menu.SetActive(false);
-        
+        HideHolders();
+
     }
+    // Takes the next choice from the storyscene if isn't null
     public void NextChoices(List<Choice> choices)
     {
         
@@ -66,7 +70,33 @@ public class ChoiceMenuController : MonoBehaviour
 
         }
         gameController.choiceFlag = true;
-    }    
+    }
+    // Takes the next choice from the storyscene if isn't null and give the question on the top
+    public void NextChoices(List<Choice> choices, string question)
+    {
+
+        if (choices == null)
+            return;
+
+        ShowHolders();
+
+        question_Text.text = question;
+
+        foreach (Choice choice in choices)
+        {
+            GameObject button_object = Instantiate(button_prefab, choice_menu.transform);
+            button_object.GetComponentInChildren<TextMeshProUGUI>().text = choice.choice_text;
+
+            Button button = button_object.GetComponent<Button>();
+            if (choice.ChapterName != null)
+            {
+                button.onClick = new Button.ButtonClickedEvent();
+                button.onClick.AddListener(() => SelectedChoice(choice.ChapterName));
+            }
+
+        }
+        gameController.choiceFlag = true;
+    }
     public void DeleteChoices()
     {
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("ChoiceButton");
@@ -76,6 +106,18 @@ public class ChoiceMenuController : MonoBehaviour
             GameObject.Destroy(button,1);
         }
     }
+    #region Holders
+    private void HideHolders()
+    {
+        choice_menu.SetActive(false);
+        question_holder.SetActive(false);
+    }
+    private void ShowHolders()
+    {
+        choice_menu.SetActive(true);
+        question_holder.SetActive(true);
+    }
+    #endregion
 }
 
 [Serializable]

@@ -19,6 +19,8 @@ public class StoryScene : ScriptableObject
 public class Sentence
 {
     public string text;
+    public bool ShowQuestion;
+    public string question;
     public List<Choice> choices;
     public Speaker speaker;
     public AudioClip sound;

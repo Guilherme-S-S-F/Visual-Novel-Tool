@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - text: Salve jeep
+    ShowQuestion: 0
+    question: 
     choices: []
     speaker: {fileID: 11400000, guid: 2c762f6e000fffd4bb17a0eeffdd6f06, type: 2}
     sound: {fileID: 0}
   - text: Com quem vc quer ir?
+    ShowQuestion: 1
+    question: Escolha com quem vai
     choices:
     - choice_text: Ir Com o Radrf
       public_id: 0

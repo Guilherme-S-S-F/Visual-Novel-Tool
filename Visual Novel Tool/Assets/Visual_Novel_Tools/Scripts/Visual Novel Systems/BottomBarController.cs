@@ -60,8 +60,17 @@ public class BottomBarController : MonoBehaviour
         }
         //If the sentence had choices, will show the choice menu with the choices. If not will disable the choice menu.
         if (currentScene.sentences[sentence_index].choices != null && currentScene.sentences[sentence_index].choices.Count != 0)
-        {            
-            choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices);            
+        {
+            // if this choice have to show or not the question on top
+            if (currentScene.sentences[sentence_index].ShowQuestion)
+            {
+                choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices,
+                    currentScene.sentences[sentence_index].question);
+            }
+            else
+            {
+                choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices);
+            }
         }
         
     }
