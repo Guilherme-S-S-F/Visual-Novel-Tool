@@ -6,7 +6,7 @@ using TMPro;
 public class BottomBarController : MonoBehaviour
 {
     public TextMeshProUGUI barText;
-    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI nameText;    
 
     public AudioSystem audioSystem;
     public ChoiceMenuController choiceMenuController;

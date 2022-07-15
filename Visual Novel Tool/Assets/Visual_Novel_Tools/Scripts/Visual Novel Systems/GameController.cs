@@ -13,6 +13,11 @@ public class GameController : MonoBehaviour
     public StoryScene currentScene;
     public BottomBarController bottomBar;    
     public BackgroundController backgroundController;
+    public CharacterManager characterManager;
+
+    public Vector2 Position;
+    public bool smooth;
+    public float speed;
 
     private void Start()
     {
@@ -37,6 +42,11 @@ public class GameController : MonoBehaviour
             else if (Input.mouseScrollDelta.y > 0 && bottomBar.sentence_counter <= bottomBar.max_sentence_viewed)
             {
                 NextSentece();
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                characterManager.MoveTo(Position, speed, smooth);
             }
         }
     }
