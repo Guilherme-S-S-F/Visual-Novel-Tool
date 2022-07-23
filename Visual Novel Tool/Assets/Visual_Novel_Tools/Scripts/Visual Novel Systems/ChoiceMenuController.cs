@@ -8,9 +8,11 @@ using System;
 public class ChoiceMenuController : MonoBehaviour
 {   [Header("Controllers")]
     [SerializeField] GameController gameController;
-    [Header("Story")]
+    [Header("objects")]
     [SerializeField] GameObject choice_menu;
     [SerializeField] GameObject question_holder;
+    [SerializeField] GameObject clickDisablePanel;
+    [Header("Story")]
     [SerializeField] GameObject button_prefab;
     [SerializeField] StorySceneInfo[] stories;
     private TextMeshProUGUI question_Text;
@@ -54,6 +56,7 @@ public class ChoiceMenuController : MonoBehaviour
         if(choices == null)
             return;
 
+        clickDisablePanel.SetActive(true);
         choice_menu.SetActive(true);        
 
         foreach (Choice choice in choices)
@@ -109,11 +112,13 @@ public class ChoiceMenuController : MonoBehaviour
     #region Holders
     private void HideHolders()
     {
+        clickDisablePanel.SetActive(false);
         choice_menu.SetActive(false);
         question_holder.SetActive(false);
     }
     private void ShowHolders()
     {
+        clickDisablePanel.SetActive(true);
         choice_menu.SetActive(true);
         question_holder.SetActive(true);
     }

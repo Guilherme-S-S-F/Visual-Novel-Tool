@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6866211537547682488, guid: 39f2c9401bd4ed04d92a1c7dd46162ac, type: 3}
+      propertyPath: YScale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866211537547682488, guid: 39f2c9401bd4ed04d92a1c7dd46162ac, type: 3}
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: 807be011dc51070498b0d03a788f9d2f, type: 3}
@@ -105,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6866211537547682491, guid: 39f2c9401bd4ed04d92a1c7dd46162ac, type: 3}
       propertyPath: m_Name
-      value: sleeping
+      value: Jeep-chan
       objectReference: {fileID: 0}
     - target: {fileID: 6866211537547682491, guid: 39f2c9401bd4ed04d92a1c7dd46162ac, type: 3}
       propertyPath: m_IsActive
