@@ -14,11 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - text: Sim bora pudim
+    ShowQuestion: 0
+    question: 
     choices: []
+    character:
+    - delete: 1
+      character: {fileID: 4767519740778569200, guid: 76f6b3d2c22dba4498a6e97e81efaad0, type: 3}
+      position: {x: 0, y: 0}
+      speed: 0
+      smooth: 1
+    - delete: 0
+      character: {fileID: 4483846344460018918, guid: 6203fdb63835a1543a48f7f0614e41f0, type: 3}
+      position: {x: 0, y: 0}
+      speed: 1
+      smooth: 1
     speaker: {fileID: 11400000, guid: e24443d85aef9214baef7d51ee724883, type: 2}
     sound: {fileID: 8300000, guid: 9b7f823ee7c637141bfca207f4f5a990, type: 3}
   - text: Que droga pudim
+    ShowQuestion: 0
+    question: 
     choices: []
+    character:
+    - delete: 0
+      character: {fileID: 4483846344460018918, guid: 6203fdb63835a1543a48f7f0614e41f0, type: 3}
+      position: {x: 1, y: 0}
+      speed: 1
+      smooth: 1
     speaker: {fileID: 11400000, guid: 3ae0bbe3d68fde344a15ebe5129d7622, type: 2}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: ef1452c03e66b0e49b0530b8e973d942, type: 3}

@@ -17,6 +17,17 @@ MonoBehaviour:
     ShowQuestion: 0
     question: 
     choices: []
+    character:
+    - delete: 0
+      character: {fileID: 4483846344460018918, guid: 6203fdb63835a1543a48f7f0614e41f0, type: 3}
+      position: {x: 1, y: 0}
+      speed: 1
+      smooth: 1
+    - delete: 0
+      character: {fileID: 4767519740778569200, guid: 76f6b3d2c22dba4498a6e97e81efaad0, type: 3}
+      position: {x: 0.5, y: 0.5}
+      speed: 1
+      smooth: 1
     speaker: {fileID: 11400000, guid: 2c762f6e000fffd4bb17a0eeffdd6f06, type: 2}
     sound: {fileID: 0}
   - text: Com quem vc quer ir?
@@ -31,9 +42,15 @@ MonoBehaviour:
       public_id: 1
       local_id: 1
       ChapterName: Chapter 1-2.1
+    character:
+    - delete: 1
+      character: {fileID: 4483846344460018918, guid: 6203fdb63835a1543a48f7f0614e41f0, type: 3}
+      position: {x: 0, y: 0}
+      speed: 0
+      smooth: 1
     speaker: {fileID: 11400000, guid: e24443d85aef9214baef7d51ee724883, type: 2}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 0bc27ad7180fe0947ae9af7150239194, type: 3}
-  nextScene: {fileID: 11400000, guid: eb79284ff7701fd4893345602d704b84, type: 2}
+  nextScene: {fileID: 11400000, guid: b8a68af00282c1a46b2864a79de907ff, type: 2}
   prevScene: {fileID: 0}
   music: {fileID: 8300000, guid: 669ee9cbda7f087468c0881890fcd2e3, type: 3}

@@ -5,23 +5,30 @@ using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
 {
-    [SerializeField]Character character;
+    [SerializeField]Character character;   
     [SerializeField] GameObject body;
     RectTransform root;
     Image charImage;
 
+
     public Vector2 anchorPadding { get { return this.GetComponent<RectTransform>().anchorMax - this.GetComponent<RectTransform>().anchorMin; } }
 
     private void Start()
-    {
+    {        
         character = GetComponent<Character>();
+        this.name = "Character[" + character.Name + "]";
         body = this.transform.GetChild(0).gameObject;
         charImage = GetComponentInChildren<Image>();
         ReajustImage();
-        root = this.GetComponent<RectTransform>();
-    }   
+        root = this.gameObject.GetComponent<RectTransform>();               
+    }
+    private void Awake()
+    {
+        this.gameObject.SetActive(true);
+    }
     void ReajustImage()
     {
+        charImage.sprite = character.sprite;
         body.transform.localScale = new Vector2(character.XScale, character.YScale);
     }
 
@@ -30,6 +37,9 @@ public class CharacterManager : MonoBehaviour
     bool isMoving { get { return moving != null; } }
     public void MoveTo(Vector2 Target, float speed, bool smooth = true)
     {
+        Debug.Log("Active? "+gameObject.activeInHierarchy);
+        root = this.gameObject.GetComponent<RectTransform>();
+
         StopMoving();
         moving = this.StartCoroutine(Moving(Target, speed, smooth));
     }
@@ -42,7 +52,7 @@ public class CharacterManager : MonoBehaviour
         moving = null;
     }
     IEnumerator Moving(Vector2 target, float speed, bool smooth)
-    {
+    {        
         targetPosition = target;
         Vector2 padding = anchorPadding;
 

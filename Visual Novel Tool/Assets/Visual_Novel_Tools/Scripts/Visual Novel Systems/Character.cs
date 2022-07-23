@@ -6,6 +6,6 @@ public class Character : MonoBehaviour
 {
     public string Name;
     public float XScale;
-    public float YScale;
-    public Vector2 Position;
+    public float YScale;    
+    public Sprite sprite;
 }

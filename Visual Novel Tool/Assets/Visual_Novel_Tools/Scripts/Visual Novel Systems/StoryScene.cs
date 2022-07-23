@@ -22,7 +22,8 @@ public class Sentence
     public bool ShowQuestion;
     public string question;
     public List<Choice> choices;
-    public Speaker speaker;
+    public List<Char> character;
+    public Speaker speaker;    
     public AudioClip sound;
 }
 [System.Serializable]
@@ -32,4 +33,13 @@ public class Choice
     public int public_id;
     public int local_id;
     public string ChapterName;    
+}
+[System.Serializable]
+public class Char
+{
+    public bool delete;
+    public GameObject character;
+    public Vector2 position;
+    public float speed;
+    public bool smooth;
 }

@@ -10,6 +10,10 @@ public class BottomBarController : MonoBehaviour
 
     public AudioSystem audioSystem;
     public ChoiceMenuController choiceMenuController;
+    public GameObject characterPrefab;
+    public Transform characterHolder;
+
+    public Dictionary<string, GameObject> characters = new Dictionary<string, GameObject>();
 
     public int max_sentence_viewed = 0;
     public int sentence_counter = 0;
@@ -72,7 +76,42 @@ public class BottomBarController : MonoBehaviour
                 choiceMenuController.NextChoices(currentScene.sentences[sentence_index].choices);
             }
         }
-        
+
+        if (currentScene.sentences[sentence_index].character != null)
+        {
+            List<Char> chars = currentScene.sentences[sentence_index].character;            
+
+            foreach (Char characAux in chars)
+            {
+                if (characAux.delete == true)
+                {
+                    GameObject.Destroy(characters[characAux.character.GetComponent<Character>().Name]);
+                    characters.Remove(characAux.character.GetComponent<Character>().Name);
+
+                    
+                }
+                else
+                {
+                    if (characters.ContainsKey(characAux.character.GetComponent<Character>().Name))
+                    {
+                        characters[characAux.character.GetComponent<Character>().Name].GetComponent<CharacterManager>().MoveTo(characAux.position, characAux.speed, characAux.smooth);
+                        continue;
+                    }
+                    else
+                    {
+                        GameObject Chara = GameObject.Instantiate(characAux.character, characterHolder);
+
+                        Chara.SetActive(true);
+
+                        characters.Add(characAux.character.GetComponent<Character>().Name, Chara);
+                        characters[characAux.character.GetComponent<Character>().Name].GetComponent<CharacterManager>().MoveTo(characAux.position, characAux.speed, characAux.smooth);
+                    }
+                }
+            }
+            
+
+
+        }
     }
     public void PlayPreviousSentence()
     {        

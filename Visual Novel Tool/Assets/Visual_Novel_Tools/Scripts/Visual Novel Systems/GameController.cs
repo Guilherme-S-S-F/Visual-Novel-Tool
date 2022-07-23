@@ -13,12 +13,7 @@ public class GameController : MonoBehaviour
     public StoryScene currentScene;
     public BottomBarController bottomBar;    
     public BackgroundController backgroundController;
-    public CharacterManager characterManager;
-
-    public Vector2 Position;
-    public bool smooth;
-    public float speed;
-
+    
     private void Start()
     {
         bottomBar.PlayScene(currentScene);
@@ -43,11 +38,7 @@ public class GameController : MonoBehaviour
             {
                 NextSentece();
             }
-
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                characterManager.MoveTo(Position, speed, smooth);
-            }
+                        
         }
     }
     
